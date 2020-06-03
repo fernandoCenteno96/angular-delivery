@@ -1,0 +1,99 @@
+
+    <section class="container">
+        <div class="row text-right mt-3 mr-5">
+            <div class="col">
+                <button class="btn btn-danger" 
+                routerLink="/product">
+                    
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <section class="col-6 ">
+                <form class="form-container text-center" [formGroup]="formProduct">
+                    <h3>Agregar Productos</h3>
+                    <div class="row row-cols-2">
+                        <div class="form-group col mt-3">
+                            <input 
+                            [ngModel]="product.name"
+                            
+                            type="email" class="form-control" id="name" aria-describedby="name"
+                            formControlName="name"
+                            placeholder="nombre del producto"
+                            
+                            >
+                         </div>
+                         <div class="form-group col mt-3">
+                            
+                            <select class="form-control" id="category" formControlName="category" >
+                                <option selected>Categoria</option>
+                                <option *ngFor="let category of categorys">{{category.name | uppercase }}</option>
+                               
+                            </select>
+                           </div>
+                        
+                      
+                    </div>
+                    <div class="form-group mt-1">
+                        <textarea class="form-control" id="description" rows="2" placeholder="Descripcion" formControlName="description"
+                        [(ngModel)]="product.description"
+                        ></textarea>
+                    </div>
+
+                    <div class="row row-cols-2 ">
+                        <div class="form-group col">
+                        <input type="number"  formControlName="stock" placeholder="Cantidad"  class="form-control" id="stock" [(ngModel)]="product.stock">
+                    </div>  
+
+                    <div class="form-group col">
+                        <input type="number" formControlName="price" placeholder="Precio" class="form-control" id="price"
+                        [(ngModel)]="product.price"
+                        >
+                    </div>
+                    </div>
+                    
+
+                   
+
+                    <div class="input-group mt-2">
+                        <div class="input-group-prepend ">
+                          <span class="input-group-text bg-white" id="inputGroupFileAddon01"><i class="fas fa-cloud-upload-alt"></i></span>
+                        </div>
+                        
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" (change)="onFileSelected($event)" id="inputGroupFile01"
+                            aria-describedby="imgUrl" formControlName="imgUrl" >
+                          <label class="custom-file-label" for="inputGroupFile01">Seleccionar imagen del producto</label>
+                        </div>
+                        <br>
+                        
+                      </div>
+                    <div class="progress">
+                        <progressbar [value]="porcentaje" type="primary" [striped]="true">{{porcentaje}}%
+                            
+                        </progressbar>
+                     </div>
+                    <button type="submit"  
+                    class="btn btn-primary btn-block mt-3"
+                    (click)="save()"
+                    *ngIf="!update"
+                    ><i class="fa fa-save"></i> Guardar</button>
+
+                    <button type="submit" *ngIf="update" 
+                    class="btn btn-primary btn-block mt-3"
+                    (click)="updateProduct()"
+                    
+                    ><i class="fa fa-save"></i> Actualizar</button>
+                  </form>
+            </section>
+        </div>
+
+    </section>
+    
+ 
+
+   
+    
+    

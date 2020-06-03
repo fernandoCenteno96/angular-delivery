@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="card bg-white" style="border: none;">
+  <article class="card-body mx-auto" style="width: 400px;">
+      <h4 class="card-title mt-3 text-center">Crear una Cuenta</h4>
+      <p class="text-center">Comienza a pedir tus productos</p>
+    
+      
+      <form [formGroup]="formLogin" >
+      <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+           </div>
+          <input name="email"  formControlName="email" class="form-control" placeholder="Correo electronico" type="email" [(ngModel)]="User.email" >
+      </div> <!-- form-group// -->
+
+
+     
+      <div class="form-group input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input  formControlName="password" name="password" class="form-control" placeholder="Crear Contraseña" type="password">
+      </div> <!-- form-group// -->  
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required  
+          [(ngModel)]="remember" [ngModelOptions]="{standalone: true}" name="check">
+          <label class="form-check-label" for="invalidCheck2">
+            recordar
+          </label>
+        </div>
+      </div>                                  
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block" (click)="login()" 
+          [disabled]="formLogin.invalid">iniciar Sesion </button>
+      </div> <!-- form-group// -->      
+      <p class="text-center">¿no tienes cuenta ? <a routerLink="/singin"> Registrarse</a> <p>                                                                 
+      </form>
+
+      <p class="divider-text">
+        <span class="bg-light"> Ó</span>
+      </p>
+      <p>
+        <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Ingresar via Twitter</a>
+        <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Ingresar  via facebook</a>
+    </p>
+
+  </article>
+  </div> <!-- card.// -->
+  
+  </div> 

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "crud-45d38": {
+      "hosting": {
+        "marker": [
+          "crud-45d38"
+        ]
+      }
+    }
+  }
+}

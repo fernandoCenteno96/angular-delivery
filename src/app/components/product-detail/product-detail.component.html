@@ -1,0 +1,84 @@
+<div class="container font-weight-light mt-5">
+    <div class="row fist">
+
+        <div class="col img">
+            <img [src]="product.imgUrl" class="img-fluid img-product" alt="Responsive image">
+        </div>
+        <div class="col">
+            
+            <section class="container text-justify">
+                
+                    <header >
+                        <h1>{{product.name}}</h1>
+                        <div class=" text-justify mb-3"> 
+                            <p class="card-text ">{{product.description}}</p>
+                        </div>
+                    </header>
+                    <fieldset class="text-center item-price">
+                        <span>{{ product.price | currency  }}</span>
+                    </fieldset>
+                    <div class="container text-justify">
+                        <fieldset>
+                           <article class="row ">
+                               <div class="payment col-1">
+                             <i class="fa fa-user ui-icon"></i>
+                             </div>
+                             <div class=" col">
+                                <p class="info"> <span class="">Pago a acordar con el vendedor</span></p>
+                                 <a href="" class="u-link mt-1" >Mas Informacion</a>
+                             </div> 
+                            
+                           </article>
+                         
+                       </fieldset>
+                    </div>
+                    <div class="container text-justify mt-5">
+                        <fieldset>
+                           <article class="row ">
+                               <div class="payment col-1">
+                             <i class="fa fa-user ui-icon"></i>
+                             </div>
+                             <div class=" col">
+                                <p class="info"> <span class="">Entrega acordar con vendedor</span></p>
+                                 <a href="" class="u-link mt-1" >Ver costo de envio</a>
+                             </div> 
+                            
+                           </article>
+                         
+                       </fieldset>
+                    </div>
+                    <fieldset >
+                        <article class="row  align-content-center text-center mt-5">
+                          <div class=" col">
+                          
+                               <span class=" mr-1">Cantidad:</span>
+                              
+                                <input type="number" class="cant" name="" id="" placeholder="Unidad">
+                           <span class="ml-2"> ({{product.stock}} disponibles)</span>     
+                            
+                            
+                            
+                          </div>
+                           
+                          
+                         
+                        </article>
+                      
+                    </fieldset>
+                       
+                    <div class="row align-content-center text-center mt-5">
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-primary btn-lg mt-4">
+                                <i class="fa fa-shopping-cart"></i>
+                                Comprar
+                            </button>
+                        </div>
+                        
+                    </div>
+                    
+                    
+            </section>
+        </div>
+    </div>
+
+</div>
